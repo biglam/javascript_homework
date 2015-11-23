@@ -6,29 +6,27 @@ document.getElementById('form_event').addEventListener("submit", function(e) {
   e.preventDefault();
   var result = 0;
   var operator = document.getElementById('operator').value;
-  var firstnum = parseInt(num1.value);
-  var secondnum = parseInt(num2.value);
   switch(operator){
     case '+':
-    result = (firstnum + secondnum);
+    result = (parseInt(num1.value) + parseInt(num2.value));
     break;
     case '-':
-    result = (firstnum - secondnum);
+    result = (parseInt(num1.value) - parseInt(num2.value));
     break;
     case '*':
-    result = (firstnum * secondnum);
+    result = (parseInt(num1.value) * parseInt(num2.value));
     break;
     case '/':
-    result = (firstnum / secondnum);
+    result = (parseInt(num1.value) / parseInt(num2.value));
     break;
     case '**':
-    result = Math.pow(firstnum, secondnum);
+    result = Math.pow(parseInt(num1.value), parseInt(num2.value));
     break;
     case 'sqrt':
-    result = Math.sqrt(firstnum);
+    result = Math.sqrt(parseInt(num1.value));
     break;
     case '%':
-    result = (firstnum % secondnum);
+    result = (parseInt(num1.value) % parseInt(num2.value));
     break;
     case 'log':
     result = Math.log(num1.value);
