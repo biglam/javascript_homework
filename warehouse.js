@@ -29,7 +29,7 @@ var PRODUCTS = [
 {bay: 'b8', name: "tissue box"},
 {bay: 'b9', name: "deodorant"},
 {bay: 'b10', name: "cookie jar"}
-]
+];
 function showByName() {
   for (var i=0; i<=PRODUCTS.length-1; i++) {
     document.write("<input id='"+i+"'name='mycheckboxes' type='checkbox' value='" + PRODUCTS[i].bay +"'>" + PRODUCTS[i].name + "</input>");
@@ -37,16 +37,16 @@ function showByName() {
   document.write("<br><button type='submit' id='submitproducts'>Submit</button>");
   document.getElementById('submitproducts').addEventListener("click", function(e) {
     var checkedBoxes = document.querySelectorAll('input[name=mycheckboxes]:checked');
-    var products = []
-    var baynumbers = []
+    var products = [];
+    var baynumbers = [];
     for (y=0; y<checkedBoxes.length; y++) {
       products[y] = PRODUCTS[checkedBoxes[y].id].bay;
-      baynumbers[y] = checkedBoxes[y].id
+      baynumbers[y] = checkedBoxes[y].id;
     }
     var totalsteps = parseInt(baynumbers[baynumbers.length-1]) - parseInt(baynumbers[0]);
     document.write("<br>You must visit " + products.join(', ') + ". A total of " + totalsteps + " steps!");
-  })
-}
+  });
+};
 
 
 
@@ -65,13 +65,13 @@ function showByBay() {
       
     };
     document.write("<br>You selected " + bays.join(', '));
-  })
+  });
 };
 
 document.getElementById('lookup_name').addEventListener("click", function(e)
 {
   showByName();
-})
+});
 document.getElementById('lookup_bay').addEventListener("click", function(e)
 {
   showByBay();
